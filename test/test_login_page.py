@@ -5,7 +5,9 @@ from selenium.webdriver.common.keys import Keys
 from helper.common import URL, DRIVER
 from helper.login import xpath_email, xpath_password, xpath_submit
 
-driver = webdriver.Chrome(DRIVER)
+#driver = webdriver.Chrome(DRIVER)
+driver = webdriver.Firefox(DRIVER)
+
 driver.get(URL)
 
 assert "Agenda App" in driver.title

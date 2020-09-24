@@ -1,6 +1,8 @@
 from helper.utils import load_xpath
 
-login_xpath = load_xpath("login")
-xpath_email = login_xpath["login"]["email"]
-xpath_password = login_xpath["login"]["password"]
-xpath_submit = login_xpath["login"]["submit"]
+login_xp = load_xpath("login")
+email_xp = login_xp["login"]["email"]
+password_xp = login_xp["login"]["password"]
+submit_xp = login_xp["login"]["submit"]
+
+

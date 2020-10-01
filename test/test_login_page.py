@@ -1,26 +1,31 @@
+import pytest
 
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+from helper.common import URL, DRIVER, ADMIN_USER_EMAIL, ADMIN_USER_PASSWORD, driver
+from helper.login import *
 
-from helper.common import URL, DRIVER
-from helper.login import email_xp, password_xp, submit_xp
-
-#driver = webdriver.Chrome(DRIVER)
-driver = webdriver.Firefox(executable_path=DRIVER)
 driver.get(URL)
 
-assert "Agenda App" in driver.title
+def test_sign_up_sign_in():
+    """ this test will made a signup a user
+    and try to signin ==> use should get sign in success
+    """
+    sign_up("abdcdfg@gmila.com", "223-333-3333", "sdfds", "sdfsfdsf", "any name")
+    pass
 
-# click sign in tab
-driver.find_element_by_link_text("Sign in").click()
-user = driver.find_element_by_xpath(email_xp)
-user.send_keys("admin@agenda.com")
-passwd = driver.find_element_by_xpath(password_xp)
-passwd.send_keys("Agenda@2020")
-driver.find_element_by_xpath(submit_xp).click()
-assert "Agenda Success" in driver.title
+
+login(ADMIN_USER_EMAIL, "sfsdfsfsadfasfdsaf", LOGIN_FAIL_MSG)
+login("dssdfs@g.com", ADMIN_USER_PASSWORD, LOGIN_FAIL_MSG)
+login(ADMIN_USER_EMAIL, ADMIN_USER_PASSWORD, LOGIN_SUCCESS_MSG)
+
+driver.find_element_by_partial_link_text("Profile").click()
 driver.close()
 
 
+def test_logout():
+    """ loing as a user
+    take an action ( go to profile page ==> u must get that user
+    logout and go to profile page ==> you should not get user profile  """
+    login("admin@agenda.com", "Agenda@2020")
 
+    pass
 

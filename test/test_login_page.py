@@ -13,12 +13,13 @@ def test_sign_up_sign_in():
     pass
 
 
-login(ADMIN_USER_EMAIL, "sfsdfsfsadfasfdsaf", LOGIN_FAIL_MSG)
-login("dssdfs@g.com", ADMIN_USER_PASSWORD, LOGIN_FAIL_MSG)
-login(ADMIN_USER_EMAIL, ADMIN_USER_PASSWORD, LOGIN_SUCCESS_MSG)
+def test_login_with_wrong_credentials():
+    login(ADMIN_USER_EMAIL, "sfsdfsfsadfasfdsaf", LOGIN_FAIL_MSG)
+    login("dssdfs@g.com", ADMIN_USER_PASSWORD, LOGIN_FAIL_MSG)
+    login(ADMIN_USER_EMAIL, ADMIN_USER_PASSWORD, LOGIN_SUCCESS_MSG)
 
-driver.find_element_by_partial_link_text("Profile").click()
-driver.close()
+    driver.find_element_by_partial_link_text("Profile").click()
+    driver.close()
 
 
 def test_logout():

@@ -1,3 +1,5 @@
+import platform
+import time
 from configparser import ConfigParser
 
 def load_xpath(file_name):
@@ -5,3 +7,13 @@ def load_xpath(file_name):
     config = ConfigParser()
     config.read(f"../xpath/{file_name}.properties")
     return config._sections
+
+
+def get_system_os_type():
+    """ this method will recognise the current os type and return the name of it"""
+    os_name = platform.system()
+    return os_name
+
+
+def sleep_seconds(seconds):
+    time.sleep(seconds)

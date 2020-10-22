@@ -1,5 +1,8 @@
 import platform
 
+import random
+import string
+
 from selenium import webdriver
 from helper.utils import load_xpath, get_system_os_type
 
@@ -51,6 +54,21 @@ banner_xp = common_prop["xpath"]["banner"]
 ADMIN_USER_EMAIL = "admin@agenda.com"
 ADMIN_USER_PASSWORD = "Agenda@2020"
 
+#user credentials
+
+USER_EMAIL = "user@agenda.com"
+USER_PASSWORD = "Agenda@2020"
+
 #driver = webdriver.Chrome(DRIVER)
 driver =select_driver(browser=driver_name_firefox)
 driver.get(URL)
+
+def generate_string(upper=0, lower=0, number=0, special=0):
+    """ this method will generate random string based on the given inputs"""
+    lower = [random.choice(string.ascii_lowercase) for _ in range(lower)]
+    upper = [random.choice(string.ascii_uppercase) for _ in range(upper)]
+    number = [random.choice(string.digits) for _ in range(number)]
+    special = [random.choice(string.punctuation) for _ in range(special)]
+
+    final_string = number + special +  lower + upper
+    return "".join(final_string)

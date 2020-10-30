@@ -1,9 +1,9 @@
 from helper.common import driver, banner_xp
-from helper.utils import load_xpath, sleep_seconds
+from helper.utils import load_prop_file, sleep_seconds
 
 sign_in_link_txt = "Sign in"
 sign_up_link_txt = "Create new account"
-login_xp = load_xpath("login")
+login_xp = load_prop_file("xpath/login")
 email_xp = login_xp["login"]["email"]
 password_xp = login_xp["login"]["password"]
 confirm_password_xp = login_xp["login"]["confirm_password"]

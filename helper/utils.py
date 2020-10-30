@@ -2,10 +2,13 @@ import platform
 import time
 from configparser import ConfigParser
 
-def load_xpath(file_name):
-    """ this method will read data from properties file"""
+
+def load_prop_file(file_name):
+    """ this method will read data from properties file
+    if the properties file is under a directory you should give directory_name/file_name
+    """
     config = ConfigParser()
-    config.read(f"../xpath/{file_name}.properties")
+    config.read(f"../{file_name}.properties")
     return config._sections
 
 

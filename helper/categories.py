@@ -2,11 +2,11 @@ from selenium.webdriver import ActionChains
 
 from helper.common import driver, banner_xp
 from helper.login import login_xp
-from helper.utils import load_xpath
+from helper.utils import load_prop_file
 
 categories_in_link_txt = "Category"
 new_category_in_link_text = "New category"
-categories_xp = load_xpath("categories")
+categories_xp = load_prop_file("xpath/categories")
 title_xp = categories_xp["categories"]["title"]
 desc_xp = categories_xp["categories"]["desc"]
 submit_xp = categories_xp["categories"]["submit"]

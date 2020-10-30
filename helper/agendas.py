@@ -2,11 +2,11 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.support.select import Select
 
 from helper.common import driver, banner_xp
-from helper.utils import load_xpath
+from helper.utils import load_prop_file
 
 agendas_in_link_txt = "Agenda"
 new_agenda_in_link_text = "New agenda"
-agendas_xp = load_xpath("agendas")
+agendas_xp = load_prop_file("xpath/agendas")
 title_xp = agendas_xp["agendas"]["title"]
 category_xp = agendas_xp["agendas"]["category"]
 desc_xp = agendas_xp["agendas"]["desc"]

@@ -4,7 +4,7 @@ from helper.common import URL, ADMIN_USER_EMAIL, ADMIN_USER_PASSWORD, driver
 from helper.login import *
 
 driver.get(URL)
-
+sleep_seconds(3)
 
 def teardown_module():
     """ this will close the driver after all test complete"""
@@ -37,7 +37,7 @@ def test_login_with_different_credentials(email, password, expected_banner_txt):
 
 @pytest.mark.skip("feature not implemented yet")
 def test_logout():
-    """ loing as a user
+    """ logging as a user
     take an action ( go to profile page ==> u must get that user
     logout and go to profile page ==> you should not get user profile  """
     login("admin@agenda.com", "Agenda@2020")

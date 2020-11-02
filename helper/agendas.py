@@ -20,13 +20,13 @@ AGENDA_SUCCESS_MSG = "posted successfully"
 AGENDA_ERROR_MSG = "login required"
 
 def agenda_actions():
-    action = ActionChains(driver);
+    action = ActionChains(driver)
 
     parent_level_menu = driver.find_element_by_link_text(agendas_in_link_txt)
     action.move_to_element(parent_level_menu).perform()
 
     child_level_menu = driver.find_element_by_link_text(new_agenda_in_link_text)
-    child_level_menu.click();
+    child_level_menu.click()
 
 def category_select(category):
     select = Select(driver.find_element_by_xpath(category_xp))

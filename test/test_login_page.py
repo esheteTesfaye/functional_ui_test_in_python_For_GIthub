@@ -4,7 +4,7 @@ from helper.common import URL, ADMIN_USER_EMAIL, ADMIN_USER_PASSWORD, driver
 from helper.login import *
 
 driver.get(URL)
-sleep_seconds(3)
+
 
 def teardown_module():
     """ this will close the driver after all test complete"""

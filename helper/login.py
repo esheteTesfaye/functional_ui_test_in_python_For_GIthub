@@ -1,5 +1,3 @@
-from selenium.webdriver import ActionChains
-
 from helper.common import driver, banner_xp
 from helper.utils import load_prop_file, sleep_seconds
 
@@ -18,7 +16,6 @@ LOGIN_BANNER_SUCCESS_TXT = "welcome"
 LOGIN_BANNER_FAIL_TXT = "wrong"
 LOGIN_TITLE_SUCCESS_TXT = "agenda app"
 LOGIN_TITLE_FAIL_TXT = "signin agenda"
-
 
 # click sign in tab
 

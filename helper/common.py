@@ -19,6 +19,7 @@ driver_name_firefox = test_env_prop["browser_name"]["firefox"]
 driver_name_chrome = test_env_prop["browser_name"]["chrome"]
 driver_name_ie = test_env_prop["browser_name"]["ie"]
 driver_name_safari = test_env_prop["browser_name"]["safari"]
+driver_name_opera = test_env_prop["browser_name"]["opera"]
 
 # selected browser
 selected_browser_name = test_env_prop["test_env"]["browser_name"]
@@ -37,7 +38,6 @@ def start_driver():
             driver_path = test_env_prop["drivers"]["gecko_driver_win"]
             driver = webdriver.Firefox(executable_path=driver_path)
             return driver
-
         elif selected_browser_name == driver_name_ie:
             return "ie"
         elif selected_browser_name == driver_name_chrome:
@@ -45,14 +45,20 @@ def start_driver():
             driver = webdriver.Chrome(executable_path=driver_path)
             return driver
     elif os_name_mac in os_type.lower():
-        if selected_browser_name ==driver_name_firefox:
+        if selected_browser_name == driver_name_firefox:
             driver_path = test_env_prop["drivers"]["gecko_driver_mac"]
             driver = webdriver.Firefox(executable_path=driver_path)
             return driver
         elif selected_browser_name == driver_name_safari:
             return "safari"
-        elif selected_browser_name==driver_name_chrome:
-            return "chrome"
+        elif selected_browser_name == driver_name_chrome:
+            driver_path = test_env_prop["drivers"]["chrome_driver_mac"]
+            driver = webdriver.Chrome(executable_path=driver_path)
+            return driver
+        elif selected_browser_name == driver_name_opera:
+            driver_path = test_env_prop["drivers"]["opera_driver_mac"]
+            driver = webdriver.Chrome(executable_path=driver_path)
+            return driver
 
 
 # xpath list

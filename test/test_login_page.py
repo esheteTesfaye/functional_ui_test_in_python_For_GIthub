@@ -39,7 +39,7 @@ def test_login_with_different_credentials(email, password, expected_banner_txt):
 
 @pytest.mark.skip("feature not implemented yet")
 def test_logout():
-    """ loing as a user
+    """ logging as a user
     take an action ( go to profile page ==> u must get that user
     logout and go to profile page ==> you should not get user profile  """
     login("admin@agenda.com", "Agenda@2020")

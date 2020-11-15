@@ -1,8 +1,11 @@
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.select import Select
 
-from helper.common import driver, banner_xp
+from helper.common import driver, banner_xp, URL
 from helper.utils import load_prop_file
+
+url_addagenda = URL + "/addagenda"
+url_agendas = URL + "/agendas"
 
 agendas_in_link_txt = "Agenda"
 new_agenda_in_link_text = "New agenda"

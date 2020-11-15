@@ -3,13 +3,15 @@ import pytest
 from helper.common import URL, ADMIN_USER_EMAIL, ADMIN_USER_PASSWORD, driver
 from helper.login import *
 
-driver.get(URL)
+
+def setup_module():
+    """ open the website"""
+    driver.get(url_sign_in)
 
 
 def teardown_module():
     """ this will close the driver after all test complete"""
     driver.close()
-
 
 def test_sign_up_sign_in():
     """ this test will made a signup a user
@@ -41,5 +43,5 @@ def test_logout():
     take an action ( go to profile page ==> u must get that user
     logout and go to profile page ==> you should not get user profile  """
     login("admin@agenda.com", "Agenda@2020")
+    logout()
 
-    pass

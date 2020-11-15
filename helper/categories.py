@@ -1,8 +1,10 @@
 from selenium.webdriver import ActionChains
 
-from helper.common import driver, banner_xp
+from helper.common import driver, banner_xp, URL
 from helper.login import login_xp
 from helper.utils import load_prop_file
+url_add_category = URL + "/addcategory"
+url_categories = URL + "/categories"
 
 categories_in_link_txt = "Category"
 new_category_in_link_text = "New category"

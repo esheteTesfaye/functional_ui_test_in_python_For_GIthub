@@ -1,6 +1,6 @@
-from helper.common import driver, banner_xp
+from helper.common import driver, banner_xp, URL
 from helper.utils import load_prop_file, sleep_seconds
-
+url_sign_in = URL + "/signin"
 sign_in_link_txt = "Sign in"
 sign_up_link_txt = "Create new account"
 login_xp = load_prop_file("xpath/login")
@@ -58,4 +58,3 @@ def sign_up(email, password, confirm_password, phone, name, banner_txt):
     driver.find_element_by_xpath(submit_xp).click()
     assert banner_txt in driver.find_element_by_xpath(banner_xp)
 
-    pass

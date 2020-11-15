@@ -1,11 +1,18 @@
 import pytest
 from datetime import time
 
-from helper.agendas import AGENDA_ERROR_MSG, AGENDA_SUCCESS_MSG, new_agenda, TITLE, DESC, agenda_actions
+from helper.agendas import AGENDA_ERROR_MSG, AGENDA_SUCCESS_MSG, new_agenda, TITLE, DESC, agenda_actions, url_addagenda
 from helper.common import URL, ADMIN_USER_EMAIL, ADMIN_USER_PASSWORD, USER_EMAIL, USER_PASSWORD, driver, generate_string
 from helper.login import LOGIN_BANNER_SUCCESS_TXT, login
 
-driver.get(URL)
+def setup_module():
+    """ open the website"""
+    driver.get(url_addagenda)
+
+
+def teardown_module():
+    """ this will close the driver after all test complete"""
+    driver.close()
 
 def test_create_agenda_without_login_not_allowed():
     """ without login you should not able to create agenda"""

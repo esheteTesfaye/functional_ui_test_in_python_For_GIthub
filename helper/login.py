@@ -56,5 +56,6 @@ def sign_up(email, password, confirm_password, phone, name, banner_txt):
     user_name = driver.find_element_by_xpath(name_xp)
     user_name.send_keys(name)
     driver.find_element_by_xpath(submit_xp).click()
-    assert banner_txt in driver.find_element_by_xpath(banner_xp)
+    actual_banner_text = driver.find_element_by_xpath(banner_xp).text
+    assert banner_txt in actual_banner_text
 

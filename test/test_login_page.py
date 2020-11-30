@@ -13,11 +13,12 @@ def teardown_module():
     """ this will close the driver after all test complete"""
     driver.close()
 
+
 def test_sign_up_sign_in():
     """ this test will made a signup a user
     and try to signin ==> use should get sign in success
     """
-    sign_up("abdcdfg@gmila.com", "223-333-3333", "sdfds", "sdfsfdsf", "any name")
+    sign_up("abdcdfg@gmila.com", "sdfds", "sdfds", "3017929864", "solomon", "success")
 
     pass
 

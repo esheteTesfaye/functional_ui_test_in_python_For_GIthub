@@ -19,9 +19,13 @@ def test_sign_up_sign_in():
     """ this test will made a signup a user
     and try to signin ==> use should get sign in success
     """
+
     random_text = generate_string(lower=10)
     email = random_text+"@gmila.com"
-    sign_up(email, "sdfds", "sdfds", "3017929864", "solomon", "success")
+
+    phone_no = generate_string(number=7)
+
+    sign_up(email, "sdfds", "sdfds", phone_no, "solomon", "success")
 
     pass
 

@@ -1,4 +1,6 @@
 import platform
+import random
+import string
 import time
 from configparser import ConfigParser
 
@@ -20,3 +22,14 @@ def get_system_os_type():
 
 def sleep_seconds(seconds):
     time.sleep(seconds)
+
+
+def generate_string(upper=0, lower=0, number=0, special=0):
+    """ this method will generate random string based on the given inputs"""
+    lower = [random.choice(string.ascii_lowercase) for _ in range(lower)]
+    upper = [random.choice(string.ascii_uppercase) for _ in range(upper)]
+    number = [random.choice(string.digits) for _ in range(number)]
+    special = [random.choice(string.punctuation) for _ in range(special)]
+
+    final_string = number + special +  lower + upper
+    return "".join(final_string)

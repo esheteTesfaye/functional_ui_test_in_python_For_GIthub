@@ -2,6 +2,7 @@ import pytest
 
 from helper.common import URL, ADMIN_USER_EMAIL, ADMIN_USER_PASSWORD, driver
 from helper.login import *
+from helper.utils import generate_string
 
 
 def setup_module():
@@ -18,7 +19,9 @@ def test_sign_up_sign_in():
     """ this test will made a signup a user
     and try to signin ==> use should get sign in success
     """
-    sign_up("abdcdfg@gmila.com", "sdfds", "sdfds", "3017929864", "solomon", "success")
+    random_text = generate_string(lower=10)
+    email = random_text+"@gmila.com"
+    sign_up(email, "sdfds", "sdfds", "3017929864", "solomon", "success")
 
     pass
 

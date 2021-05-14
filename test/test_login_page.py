@@ -53,3 +53,4 @@ def test_logout():
     login("admin@agenda.com", "Agenda@2020")
     logout()
 
+# this is just a comment 
